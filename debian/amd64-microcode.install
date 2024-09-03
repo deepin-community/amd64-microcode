@@ -1,0 +1,3 @@
+amd-ucode/*bin	usr/lib/firmware/amd-ucode
+amdtee/*        usr/lib/firmware/amdtee
+amd/*sev*bin	usr/lib/firmware/amd

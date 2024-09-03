@@ -1,0 +1,5 @@
+etc/default
+etc/modprobe.d
+usr/lib/firmware/amd-ucode
+usr/lib/firmware/amd
+usr/lib/firmware/amdtee
