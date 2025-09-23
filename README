@@ -11,6 +11,41 @@ amdtee/ currently includes firmware for the amd_pmf driver.
 
 latest commits in this release:
 
+commit 3660cb7665df91e664b240c19c560f138d74f483
+Author: John Allen <john.allen@amd.com>
+Date:   Wed Feb 19 20:29:05 2025 +0000
+
+    linux-firmware: Update AMD SEV firmware
+
+    Update AMD SEV firmware to version 1.55 build 29 for AMD family 19h processors
+    with models in the range 00h to 0fh.
+
+    Update AMD SEV firmware to version 1.55 build 39 for AMD family 19h processors
+    with models in the range 10h to 1fh.
+
+    Update AMD SEV firmware to version 1.55 build 39 for AMD family 19h processors
+    with models in the range a0h to afh.
+
+    Add AMD SEV firmware version 1.55 build 54 for AMD family 1ah processors with
+    models in the range 00h to 0fh.
+
+    Signed-off-by: John Allen <john.allen@amd.com>
+
+commit 48bb90cceb882cab8e9ab692bc5779d3bf3a13b8
+Author: John Allen <john.allen@amd.com>
+Date:   Thu Nov 21 10:22:38 2024 -0600
+
+    linux-firmware: Update AMD cpu microcode
+
+    * Update AMD cpu microcode for processor family 17h
+    * Update AMD cpu microcode for processor family 19h
+
+    Key Name        = AMD Microcode Signing Key (for signing microcode container files only)
+    Key ID          = F328AE73
+    Key Fingerprint = FC7C 6C50 5DAF CC14 7183 57CA E4BE 5339 F328 AE73
+
+    Signed-off-by: John Allen <john.allen@amd.com>
+
 commit ace84e6edc27bcba8e44ba8588e93a4c74a4fba1
 Author: John Allen <john.allen@amd.com>
 Date:   Tue Aug 20 18:26:55 2024 +0000
