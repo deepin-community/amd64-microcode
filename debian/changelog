@@ -1,3 +1,52 @@
+amd64-microcode (3.20251202.1) unstable; urgency=medium
+
+  * Update package data from linux-firmware 20251202
+    * ATTENTION: regression risk if backported to stable or LTS.
+      The amd processor microcode updates in this release will not load on
+      systems with outdated BIOS vulnerable to "Entrysign" unless a number of
+      kernel patches are present.
+    * amd-tee: update AMD PMF TA Firmware to v3.1.
+    * amd-ucode: update with release 2025-12-02:
+      + SECURITY UPDATE (AMD-SB-7055 / CVE-2025-62626)
+        Fix RDSEED Failure on more AMD Zen 5 Processor models
+        (closes: #1120005)
+    * amd-ucode: update with release 2025-11-13:
+      + SECURITY UPDATE (AMD-SB-7055 / CVE-2025-62626)
+        Fix RDSEED Failure on more AMD Zen 5 Processor models
+    * amd-ucode: update with release 2025-10-30:
+      + SECURITY UPDATE (AMD-SB-7055 / CVE-2025-62626)
+        Fix RDSEED Failure on some AMD Zen 5 Processor models
+    + amd-ucode: update with release 2025-10-27:
+      * This is the final microcode release for systems that have not
+        been updated to fix vulnerability AMD-SB-7033 "Entrysign").
+      * A kernel update is needed for the microcode driver to be able
+        to select the appropriate microcode updates for outdated system
+        firmware vulnerable to "Entrysign".
+      * On non-updated kernels, this will potentially *regress* the
+        microcode version on the running system back to the one in the
+        (outdated, unpatched-for-Entrysign) BIOS.
+    + amd-ucode: update with release 2025-07-29:
+      + SECURITY UPDATE (AMD-SB-7029: CVE-2024-36350, CVE-2024-36357):
+        Mitigate transient execution vulnerabilities in some AMD processors
+        which might allow an attacker to infer data from previous stores
+        (TSA-SQ) or data in the L1D cache (TSA-L1), potentially resulting in
+        the leakage of privileged information and sensitive information across
+        priviledged boundaries (closes: #1109035)
+      * NOTE: Requires kernel and hypervisor changes for the security
+        mitigations to be applied (issue VERW instruction at appropriate
+        times).
+  * initramfs: guard against copying non-microcode data into the
+    early-initramfs bundle, for the benefit of those that copy all files from
+    linux-firmware into /lib/firmware/*.  Thanks to Eric Valette for tracking
+    it down (closes: #1101350)
+  * debian/control: recommend cpio (closes: #1110987)
+  * NEWS.Debian: update for post-Entrysign microcode updates
+    Document that kernel patches are needed to avoid regressing the microcode
+    release on vulnerable Zen2/3/4 systems (family 0x19), and also that these
+    systems will not receive any future microcode updates.
+
+ -- Henrique de Moraes Holschuh <hmh@debian.org>  Sat, 06 Dec 2025 12:04:29 -0300
+
 amd64-microcode (3.20250311.1) unstable; urgency=medium
 
   * Update package data from linux-firmware 20250311

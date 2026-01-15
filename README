@@ -11,6 +11,81 @@ amdtee/ currently includes firmware for the amd_pmf driver.
 
 latest commits in this release:
 
+commit e637542fa8b9e0a88b0b2885072eea7df3737969
+Author: John Allen <john.allen@amd.com>
+Date:   Thu Oct 30 17:23:31 2025 -0500
+
+    linux-firmware: Update AMD cpu microcode
+
+    * Update AMD cpu microcode for processor family 1ah
+
+    Key Name        = AMD Microcode Signing Key (for signing microcode container files only)
+    Key ID          = F328AE73
+    Key Fingerprint = FC7C 6C50 5DAF CC14 7183 57CA E4BE 5339 F328 AE73
+
+    Signed-off-by: John Allen <john.allen@amd.com>
+
+commit ad91544767665e911386e62ecebaa969e2cfb1c0
+Author: John Allen <john.allen@amd.com>
+Date:   Mon Oct 27 17:25:01 2025 -0500
+
+    linux-firmware: Update AMD cpu microcode
+
+    * Update AMD cpu microcode for processor family 19h
+
+    Key Name        = AMD Microcode Signing Key (for signing microcode container files only)
+    Key ID          = F328AE73
+    Key Fingerprint = FC7C 6C50 5DAF CC14 7183 57CA E4BE 5339 F328 AE73
+
+    Signed-off-by: John Allen <john.allen@amd.com>
+
+commit 3a49a7356a8c83a33d0214edfc5d8fd835caa93a
+Author: Andrew Cooper <andrew.cooper3@citrix.com>
+Date:   Tue Oct 21 14:20:56 2025 +0100
+
+    amd-ucode: Fix minimum revisions in README
+
+    ... to match the minimum revisions stated in the binaries.
+
+    Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+commit 3768c184de68a85b9df6697e7f93a2f61de90a99
+Author: John Allen <john.allen@amd.com>
+Date:   Tue Jul 29 10:21:29 2025 -0500
+
+    linux-firmware: Update AMD cpu microcode
+
+    * Update AMD cpu microcode for processor family 19h
+    * Add AMD cpu microcode for processor family 1ah
+
+    Key Name        = AMD Microcode Signing Key (for signing microcode
+    container files only)
+    Key ID          = F328AE73
+    Key Fingerprint = FC7C 6C50 5DAF CC14 7183 57CA E4BE 5339 F328 AE73
+
+    Signed-off-by: John Allen <john.allen@amd.com>
+
+commit 331eac9144402d6cfa02ff3b2888a40bb9a7a01a
+Author: John Allen <john.allen@amd.com>
+Date:   Mon Jul 7 18:56:23 2025 +0000
+
+    linux-firmware: Update AMD cpu microcode
+
+    * Update AMD cpu microcode for processor family 19h
+
+    Key Name        = AMD Microcode Signing Key (for signing microcode container files only)
+    Key ID          = F328AE73
+    Key Fingerprint = FC7C 6C50 5DAF CC14 7183 57CA E4BE 5339 F328 AE73
+
+    Signed-off-by: John Allen <john.allen@amd.com>
+    Signed-off-by: Josh Boyer <jwboyer@kernel.org>
+
+commit 86d528c261657497967cb2b2051374639e6ad476
+Author: Shyam Sundar  S K <shyam-sundar.s-k@amd.com>
+Date:   Wed May 7 14:22:26 2025 +0000
+
+    amd_pmf: Update AMD PMF TA Firmware to v3.1
+
 commit 3660cb7665df91e664b240c19c560f138d74f483
 Author: John Allen <john.allen@amd.com>
 Date:   Wed Feb 19 20:29:05 2025 +0000
