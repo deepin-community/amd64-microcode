@@ -1,3 +1,41 @@
+amd64-microcode (3.20251030.1) unstable; urgency=high
+
+    This release ships microcode for family 0x1ah (Zen5) that cannot be
+    loaded by very outdated system firmware, due to the fix for the
+    "Entrysign" microcode signature issue (as described by AMD-SB-7033).
+
+    This release ships two sets of microcode for family 0x19h (Zen3,
+    Zen3+, Zen4):
+
+    * The most recent set of microcode updates, which will only work for
+      systems that had their system firmware (BIOS) properly updated to
+      address the Entrysign microcode signature vulnerability.
+
+    * A second set of older microcode "updates", for systems with outdated
+      system firmware still vulnerable to the Entrysign vulnerability.
+
+      As described by AMD:
+      "In order to not fully abandon machines affected by AMD-SB-7033 that
+      have not received the BIOS update, the family 19h microcode container
+      now includes a second patch for these machines that brings the microcode
+      to the highest possible level without the microcode signing fix. While a
+      BIOS update is highly recommended to receive the latest security updates
+      issued after the microcode signing vulnerability, this will allow
+      non-updated systems to at least receive some microcode updates beyond
+      the version provided by BIOS."
+
+      Note that any such systems *will remain vulnerable* to Entrysign and
+      anything else that has been fixed by microcode updates since then.
+
+    For more details, refer to AMD-SB-7033:
+    https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7033.html
+
+    IMPORTANT NOTE: an updated Linux kernel with an updated AMD microcode
+    update driver is required in order to the "set of older microcode
+    updates" to be selected on systems with outdated firmware.
+
+ -- Henrique de Moraes Holschuh <hmh@debian.org>  Sat, 08 Nov 2025 19:20:02 -0300
+
 amd64-microcode (3.20230808.1) unstable; urgency=high
 
     This release requires *either* new-enough system firmware, *or* a

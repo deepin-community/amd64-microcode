@@ -96,7 +96,7 @@ EFWF="${EFWCD}/AuthenticAMD.bin"
 # firmware file, as well as the timestamp and ordering of
 # all cpio members.
 mkdir -p "${EFWCD}" && \
- find "${AUCODE_FW_DIR}/." -maxdepth 1 -type f -print0 | LC_ALL=C sort -z | xargs -0 -r cat 2>/dev/null >"${EFWF}" && \
+ find "${AUCODE_FW_DIR}/." -maxdepth 1 -type f -name 'microcode_amd*.bin' -print0 | LC_ALL=C sort -z | xargs -0 -r cat 2>/dev/null >"${EFWF}" && \
  find "${EFWD}" -print0 | xargs -0r touch --no-dereference --date="@${CHANGELOG_TS}" && { \
     # --reproducible requires cpio >= 2.12
     cpio --usage | grep -qs -- "--reproducible" && cpio_reproducible="--reproducible" || true
